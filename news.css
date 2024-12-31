@@ -1,0 +1,135 @@
+body {
+  font-family: Arial, sans-serif;
+  background: black;
+}
+
+.animation-box {
+  width: 75%;
+  height: 35rem;
+  background-color: rgb(0, 0, 0);
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.text {
+  position: absolute;
+  opacity: 0;
+}
+
+
+.image {
+  display: block;
+  margin: 1rem auto; /* Centers the image */
+  width: 100%; /* Ensure the image takes full width of the container */
+  max-width: 18rem; /* Set a max width for consistent sizing */
+  max-height: 18rem; /* Set a max height to maintain square-like size */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the image fills the container without stretching */
+  object-position: center center; /* Keeps the focus on the center */
+  border-radius: 12px; /* Softens the corners */
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.6); /* Soft pink glow around the image */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover Effect for Romantic Feel */
+.image:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 0 25px rgba(255, 105, 180, 0.8); /* Brighter pink glow on hover */
+  filter: brightness(1.2); /* Increase brightness on hover for a glowing effect */
+}
+
+/* Soft Heart Animation Overlay */
+.image::before {
+  content: "❤️"; /* Heart symbol */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: rgba(255, 105, 180, 0.7); /* Soft pink color */
+  animation: pulse 2s infinite; /* Pulse animation */
+  z-index: 1;
+}
+
+/* Pulse animation for the heart */
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+  
+  
+
+
+.first-text {
+  font-size: 4.4rem;
+  left: 2.5rem;
+  top: 5rem;
+  color: white;
+  animation: topFadeOut 5s;
+}
+
+.second-text {
+  font-size: 3.4rem;
+  top: 8.5rem;
+  color: #ccc;
+  animation: rightFadeInOut 6s 3s;
+}
+
+.third-text {
+  transform: rotate(-90deg);
+  font-size: 2rem;
+  left: 45%;
+  top: 45%;
+  color: #a3ddf0;
+  animation: topFadeOutVertical 6s 7.5s;
+}
+
+.fourth-text {
+  font-size: 3.4rem;
+  top: 10.5rem;
+  left: 10%;
+  color: #f0a3be;
+  animation: fadeInOut 9s 8.5s;
+}
+
+.fifth-text {
+  font-size: 5rem;
+  left: 5%;
+  bottom: 25%;
+  color: #f0eba3;
+  animation: bottomFadeOut 9s 10s;
+}
+
+/* Keyframes (same as before) */
+@keyframes topFadeOut {
+  0% { top: -3rem; opacity: 0; }
+  75% { top: 25%; opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes bottomFadeOut {
+  0% { bottom: -5rem; opacity: 0; }
+  75% { bottom: 25%; opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes topFadeOutVertical {
+  0% { top: -3rem; opacity: 0; }
+  75% { top: 45%; opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes rightFadeInOut {
+  0% { right: -3rem; opacity: 0; }
+  75% { right: 10rem; opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  45% { opacity: 1; }
+  100% { opacity: 0; }
+}
